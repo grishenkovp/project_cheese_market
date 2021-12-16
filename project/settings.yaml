@@ -1,0 +1,10 @@
+#YAML
+DB:
+  USER: 'postgres'
+  PASSWORD: 'nopswd'
+  HOST: 'localhost'
+  PORT: 5432
+  NAME: 'prices_db'
+
+DATA:
+  PATH: '.\data\'
