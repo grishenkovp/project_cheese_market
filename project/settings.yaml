@@ -1,0 +1,13 @@
+#YAML
+DB:
+  USER: 'postgres'
+  PASSWORD: 'nopswd'
+  HOST: 'localhost'
+  PORT: 5432
+  NAME: 'prices_db'
+
+DATA:
+  PATH_PRICES: '.\data_prices\'
+  PATH_SALES: '.\data_sales\'
+  PATH_SALES_GROUP: '.\data_sales_group\'
+  FILE_NAME_SALES_GROUP: 'sales_group.csv'
