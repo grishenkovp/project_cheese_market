@@ -352,6 +352,12 @@ class Buy():
                            cls.customer_buy_dict.get('quantity'),
                            cls.customer_buy_dict.get('price'))
             cls.list_buys.append(sale_record)
+
+    @classmethod
+    def update_customer_last_price(cls, dict_last_price: Dict, customer_id: int) -> None:
+        """Обновляем данные о последней цене покупки"""
+        if cls.customer_buy_dict != {}:
+            dict_last_price[customer_id] = cls.customer_buy_dict.get('price')
             cls.customer_buy_dict.clear()
 
     @classmethod
