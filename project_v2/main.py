@@ -7,7 +7,6 @@ from retailer import Retailer as r
 from buy import Buy as b
 import model as m
 import etl
-import ab_test
 
 
 def execute_all_func(list_model: List):
@@ -41,6 +40,8 @@ def execute_all_func(list_model: List):
                 b.update_customer_stocks(dict_stock, customer_id)
                 # Если совершена покупка, добавляем данные о ней в список
                 b.process_purchase(dt, model_number, customer_id)
+                # Если совершена покупка, обновляем данные о последней цене,по которой приобретен товар
+                b.update_customer_last_price(dict_last_price, customer_id)
         # Записываем информацию о покупках в файл csv
         b.write_sales_csv(model_number)
 
@@ -51,6 +52,5 @@ def execute_all_func(list_model: List):
 
 
 if __name__ == '__main__':
-    # execute_all_func(m.LIST_MODEL_WORK)
-    # etl.group_datasets_sales()
-    ab_test.ab_test()
+    execute_all_func(m.LIST_MODEL_WORK)
+    etl.group_datasets_sales()
